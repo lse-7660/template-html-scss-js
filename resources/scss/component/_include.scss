@@ -1,3 +1,8 @@
 @import 'variables';
-@import 'mixins';
+@import 'group_mixins';
+// mixins 안에 변수 들어있음 > variables 가 위로 가야함
+
 @import 'reset';
+
+@import 'group_components';
+@import 'group_forms';
