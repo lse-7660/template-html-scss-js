@@ -1,0 +1,52 @@
+@import 'component/include' #wrap {
+    width: 1200px;
+    margin: 0 auto;
+    background: $grayscale-300;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    h1 {
+        font-size: 24px;
+        color: $primary-default;
+        a {
+            display: block;
+            width: 300px;
+            height: 300px;
+            color: $primary-default;
+            @include flexcenter;
+        }
+        &::before {
+            content: '앞';
+        }
+        &::after {
+            content: '뒤';
+        }
+        &:hover {
+            a {
+                color: lightcoral;
+            }
+            &::before {
+                background: $primary-default;
+            }
+        }
+    }
+}
+// &는 h1:hover h1::before처럼 바로 붙어있는 거 쓸 때
+// & 안붙이면 자손 선택하는거임
+#gnb {
+    // 자식만 선택 > ul > li > a
+    // > 없으면 자손 선택(즉 아래에 있는 a태그 전부 선택
+    > ul {
+        display: flex;
+        gap: 20px;
+        > li {
+            > a {
+                padding: 20px;
+                color: red;
+            }
+        }
+    }
+}
